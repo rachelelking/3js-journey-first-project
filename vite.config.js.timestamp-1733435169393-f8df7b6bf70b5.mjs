@@ -1,0 +1,30 @@
+// vite.config.js
+import restart from "file:///Users/rachking/Library/CloudStorage/OneDrive-Deloitte(O365D)/Desktop/Coding%20self-learning/03-first-threejs-project/node_modules/vite-plugin-restart/dist/index.js";
+var vite_config_default = {
+  root: "src/",
+  // Sources files (typically where index.html is)
+  publicDir: "../static/",
+  // Path from "root" to static assets (files that are served as they are)
+  server: {
+    host: true,
+    // Open to local network and display URL
+    open: !("SANDBOX_URL" in process.env || "CODESANDBOX_HOST" in process.env)
+    // Open if it's not a CodeSandbox
+  },
+  build: {
+    outDir: "../dist",
+    // Output in the dist/ folder
+    emptyOutDir: true,
+    // Empty the folder first
+    sourcemap: true
+    // Add sourcemap
+  },
+  plugins: [
+    restart({ restart: ["../static/**"] })
+    // Restart server on static file change
+  ]
+};
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvVXNlcnMvcmFjaGtpbmcvTGlicmFyeS9DbG91ZFN0b3JhZ2UvT25lRHJpdmUtRGVsb2l0dGUoTzM2NUQpL0Rlc2t0b3AvQ29kaW5nIHNlbGYtbGVhcm5pbmcvMDMtZmlyc3QtdGhyZWVqcy1wcm9qZWN0XCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ZpbGVuYW1lID0gXCIvVXNlcnMvcmFjaGtpbmcvTGlicmFyeS9DbG91ZFN0b3JhZ2UvT25lRHJpdmUtRGVsb2l0dGUoTzM2NUQpL0Rlc2t0b3AvQ29kaW5nIHNlbGYtbGVhcm5pbmcvMDMtZmlyc3QtdGhyZWVqcy1wcm9qZWN0L3ZpdGUuY29uZmlnLmpzXCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ltcG9ydF9tZXRhX3VybCA9IFwiZmlsZTovLy9Vc2Vycy9yYWNoa2luZy9MaWJyYXJ5L0Nsb3VkU3RvcmFnZS9PbmVEcml2ZS1EZWxvaXR0ZShPMzY1RCkvRGVza3RvcC9Db2RpbmclMjBzZWxmLWxlYXJuaW5nLzAzLWZpcnN0LXRocmVlanMtcHJvamVjdC92aXRlLmNvbmZpZy5qc1wiO2ltcG9ydCByZXN0YXJ0IGZyb20gJ3ZpdGUtcGx1Z2luLXJlc3RhcnQnXG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgICByb290OiAnc3JjLycsIC8vIFNvdXJjZXMgZmlsZXMgKHR5cGljYWxseSB3aGVyZSBpbmRleC5odG1sIGlzKVxuICAgIHB1YmxpY0RpcjogJy4uL3N0YXRpYy8nLCAvLyBQYXRoIGZyb20gXCJyb290XCIgdG8gc3RhdGljIGFzc2V0cyAoZmlsZXMgdGhhdCBhcmUgc2VydmVkIGFzIHRoZXkgYXJlKVxuICAgIHNlcnZlcjpcbiAgICB7XG4gICAgICAgIGhvc3Q6IHRydWUsIC8vIE9wZW4gdG8gbG9jYWwgbmV0d29yayBhbmQgZGlzcGxheSBVUkxcbiAgICAgICAgb3BlbjogISgnU0FOREJPWF9VUkwnIGluIHByb2Nlc3MuZW52IHx8ICdDT0RFU0FOREJPWF9IT1NUJyBpbiBwcm9jZXNzLmVudikgLy8gT3BlbiBpZiBpdCdzIG5vdCBhIENvZGVTYW5kYm94XG4gICAgfSxcbiAgICBidWlsZDpcbiAgICB7XG4gICAgICAgIG91dERpcjogJy4uL2Rpc3QnLCAvLyBPdXRwdXQgaW4gdGhlIGRpc3QvIGZvbGRlclxuICAgICAgICBlbXB0eU91dERpcjogdHJ1ZSwgLy8gRW1wdHkgdGhlIGZvbGRlciBmaXJzdFxuICAgICAgICBzb3VyY2VtYXA6IHRydWUgLy8gQWRkIHNvdXJjZW1hcFxuICAgIH0sXG4gICAgcGx1Z2luczpcbiAgICBbXG4gICAgICAgIHJlc3RhcnQoeyByZXN0YXJ0OiBbICcuLi9zdGF0aWMvKionLCBdIH0pIC8vIFJlc3RhcnQgc2VydmVyIG9uIHN0YXRpYyBmaWxlIGNoYW5nZVxuICAgIF0sXG59Il0sCiAgIm1hcHBpbmdzIjogIjtBQUE2Z0IsT0FBTyxhQUFhO0FBRWppQixJQUFPLHNCQUFRO0FBQUEsRUFDWCxNQUFNO0FBQUE7QUFBQSxFQUNOLFdBQVc7QUFBQTtBQUFBLEVBQ1gsUUFDQTtBQUFBLElBQ0ksTUFBTTtBQUFBO0FBQUEsSUFDTixNQUFNLEVBQUUsaUJBQWlCLFFBQVEsT0FBTyxzQkFBc0IsUUFBUTtBQUFBO0FBQUEsRUFDMUU7QUFBQSxFQUNBLE9BQ0E7QUFBQSxJQUNJLFFBQVE7QUFBQTtBQUFBLElBQ1IsYUFBYTtBQUFBO0FBQUEsSUFDYixXQUFXO0FBQUE7QUFBQSxFQUNmO0FBQUEsRUFDQSxTQUNBO0FBQUEsSUFDSSxRQUFRLEVBQUUsU0FBUyxDQUFFLGNBQWdCLEVBQUUsQ0FBQztBQUFBO0FBQUEsRUFDNUM7QUFDSjsiLAogICJuYW1lcyI6IFtdCn0K
